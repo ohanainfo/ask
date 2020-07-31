@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "test-c2f3"
+    labels:
+        app: "test-c2f3"
+spec:
+    type: ClusterIP
+    ports:
+    - port: 443
+      targetPort: 443
+      protocol: TCP
+      name: http
+    selector:
+        app: "test-c2f3"
