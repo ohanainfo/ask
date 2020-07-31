@@ -15,7 +15,7 @@ RBAC:
   Enabled: true
 
 Datacenter:
-  Enabled: false
+  Enabled: true
 
 # to add certs inside the docker container
 Certs:
@@ -30,7 +30,7 @@ Certs:
 Image:
   Name: "praqma/jira"
   Tag: "8.1.0"
-  ImagePullPolicy: "Always"
+  ImagePullPolicy: "Never"
   PrivateRegistry: true
   PullSecret: "docker-hub-credentials"
 
@@ -38,7 +38,7 @@ ContainerPort: 8080
 TerminationGracePeriodSeconds: 50
 
 EnvVars:
-  X_PROXY_NAME: "jira.example.com"
+  X_PROXY_NAME: "jiradc.gatilohana.com.br"
   X_PROXY_PORT: "443"
   X_PROXY_SCHEME: "https"
   X_CONTEXT_PATH: ""
@@ -111,7 +111,7 @@ Service:
 
 Ingress:
   Enabled: true
-  Host: jira.example.com
+  Host: jiradc.gatilohana.com.br
   ServicePort: 8080
   # Annotations:
   #   ingress.kubernetes.io/force-ssl-redirect: "true"
