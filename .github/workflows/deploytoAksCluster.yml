@@ -27,7 +27,7 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/jira" -f  "https://github.com/Praqma/jira" -t jiradc2.azurecr.io/test:${{ github.sha }}
+        docker build "$GITHUB_WORKSPACE/jira" -f  "https://github.com/ohanainfo/ask/jira" -t jiradc2.azurecr.io/test:${{ github.sha }}
         docker push jiradc2.azurecr.io/test:${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
