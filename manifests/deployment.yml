@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "test-c2f3"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "test-c2f3"
+    spec:
+      containers:
+        - name: "test-c2f3"
+          image: "jiradc2.azurecr.io/test"
+          ports:
+          - containerPort: 443
