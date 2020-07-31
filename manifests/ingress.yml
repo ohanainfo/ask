@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "test-c2f3"
+    labels:
+        app: "test-c2f3"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: test9426-test-c2f3.3b622fdfa3c4430890d8.brazilsouth.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "test-c2f3"
+                servicePort: 443
